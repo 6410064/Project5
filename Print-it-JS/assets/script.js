@@ -58,12 +58,6 @@ previous.addEventListener("click", function () {
   newImage.className = "banner-img";
   imageContainer.appendChild(newImage);
   let taglineElement = document.querySelector("#banner p");
-  if (index === numberOfSlides) {
-    index = 0;
-  }
-  if (index <= 3) {
-    newImage.src = `./assets/images/slideshow/${slides[index].image}`;
-    taglineElement.innerHTML = slides[index].tagLine;
-    // console.log(index);
-  }
+  newImage.src = `./assets/images/slideshow/${slides[index].image}`;
+  taglineElement.innerHTML = slides[index].tagLine;
 });
