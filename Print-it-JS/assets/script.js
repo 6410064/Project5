@@ -22,12 +22,13 @@ let index = 0;
 const numberOfSlides = slides.length;
 // fleches
 let previous = document.getElementById("left__arrow-id");
+
 let next = document.getElementById("right__arrow-id");
 
 const imageContainer = document.getElementById("banner");
-let dots = document.querySelectorAll(".dot");
-// console.log(dots)
 
+let dots = document.querySelectorAll(".dot");
+// clique fleche de droite 
 next.addEventListener("click", function () {
   dots[index].classList.remove("dot_selected");
   if (index === 3) {
@@ -42,15 +43,13 @@ next.addEventListener("click", function () {
   let taglineElement = document.querySelector("#banner p");
   newImage.src = `./assets/images/slideshow/${slides[index].image}`;
   taglineElement.innerHTML = slides[index].tagLine;
-  // console.log(index);
 });
-
+// clique fleche de gauche
 previous.addEventListener("click", function () {
   dots[index].classList.remove("dot_selected");
   if (index === 0) {
     index = 3;
-  }
-  else {
+  } else {
     index--;
   }
   dots[index].classList.add("dot_selected");
